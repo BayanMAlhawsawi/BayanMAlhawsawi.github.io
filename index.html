@@ -18,181 +18,481 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #0b1120;
-            color: #e5e7eb;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080d19;
+            color: #f1f5f9;
             line-height: 1.6;
         }
+
+        /* ================= NAVBAR ================= */
 
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            padding: 20px 8%;
-            background: rgba(11, 17, 32, 0.95);
-            border-bottom: 1px solid #1e293b;
+            height: 76px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(8, 13, 25, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #172033;
             z-index: 1000;
         }
 
-        nav a {
-            color: #cbd5e1;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
             text-decoration: none;
-            margin-left: 25px;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 17px;
         }
 
-        nav a:hover {
+        .logo-icon {
+            width: 34px;
+            height: 34px;
+            border: 1px solid #3b82f6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: #60a5fa;
         }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        /* ================= HERO ================= */
 
         .hero {
             min-height: 100vh;
+            padding: 140px 7% 80px;
             display: flex;
             align-items: center;
-            padding: 100px 8% 60px;
+            justify-content: space-between;
+            gap: 60px;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-content {
-            max-width: 750px;
+            width: 55%;
+            max-width: 700px;
+            z-index: 2;
         }
 
-        .tag {
+        .eyebrow {
             color: #60a5fa;
-            font-size: 15px;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 18px;
         }
 
-        h1 {
-            font-size: clamp(45px, 7vw, 75px);
-            line-height: 1.1;
+        .hero h1 {
+            font-size: clamp(48px, 6vw, 76px);
+            line-height: 1.05;
             margin-bottom: 20px;
+            letter-spacing: -2px;
         }
 
         .hero h2 {
-            font-size: 25px;
-            font-weight: normal;
+            font-size: clamp(21px, 2.5vw, 29px);
+            font-weight: 400;
             color: #94a3b8;
             margin-bottom: 25px;
         }
 
-        .hero p {
+        .hero-description {
+            max-width: 620px;
             color: #94a3b8;
-            max-width: 650px;
-            margin-bottom: 30px;
-            font-size: 17px;
+            font-size: 16px;
+            margin-bottom: 32px;
         }
 
-        .buttons a {
-            display: inline-block;
-            padding: 12px 22px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            border-radius: 6px;
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 12px 20px;
+            border-radius: 7px;
             text-decoration: none;
             font-size: 14px;
+            font-weight: 600;
+            transition: 0.2s ease;
         }
 
-        .primary {
+        .button-primary {
             background: #2563eb;
-            color: white;
+            color: #ffffff;
         }
 
-        .secondary {
-            border: 1px solid #334155;
-            color: #e5e7eb;
+        .button-primary:hover {
+            background: #3b82f6;
+            transform: translateY(-2px);
         }
+
+        .button-secondary {
+            border: 1px solid #334155;
+            color: #e2e8f0;
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .button-secondary:hover {
+            border-color: #60a5fa;
+            color: #60a5fa;
+            transform: translateY(-2px);
+        }
+
+        .button svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ================= CYBER VISUAL ================= */
+
+        .hero-visual {
+            width: 40%;
+            min-height: 430px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .network {
+            position: absolute;
+            width: 430px;
+            height: 430px;
+            border-radius: 50%;
+            border: 1px solid rgba(59, 130, 246, 0.12);
+            background-image:
+                radial-gradient(circle, rgba(96, 165, 250, 0.35) 1px, transparent 1px);
+            background-size: 28px 28px;
+            opacity: 0.75;
+        }
+
+        .network::before,
+        .network::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(59, 130, 246, 0.14);
+            border-radius: 50%;
+        }
+
+        .network::before {
+            inset: 45px;
+        }
+
+        .network::after {
+            inset: 95px;
+        }
+
+        .shield {
+            width: 190px;
+            height: 220px;
+            position: relative;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .shield svg {
+            width: 190px;
+            height: 220px;
+            filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.35));
+        }
+
+        .lock {
+            position: absolute;
+            width: 58px;
+            height: 62px;
+            top: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #dbeafe;
+        }
+
+        .lock svg {
+            width: 52px;
+            height: 52px;
+            filter: none;
+        }
+
+        /* ================= SECTIONS ================= */
 
         section {
-            padding: 90px 8%;
-            max-width: 1200px;
+            padding: 100px 7%;
+            max-width: 1250px;
             margin: auto;
         }
 
+        .section-label {
+            color: #60a5fa;
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
         section h2 {
-            font-size: 32px;
+            font-size: 38px;
             margin-bottom: 15px;
         }
 
-        .section-intro {
+        .section-description {
             color: #94a3b8;
-            margin-bottom: 35px;
+            max-width: 650px;
+            margin-bottom: 45px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 70px;
+            align-items: start;
         }
 
         .about-text {
-            max-width: 800px;
             color: #cbd5e1;
+            font-size: 16px;
         }
+
+        .about-text p + p {
+            margin-top: 18px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .info-card {
+            background: #0e1626;
+            border: 1px solid #1c2940;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .info-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: #111f38;
+            color: #60a5fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 13px;
+        }
+
+        .info-icon svg {
+            width: 19px;
+            height: 19px;
+        }
+
+        .info-card h3 {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .info-card p {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        /* ================= SKILLS ================= */
 
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 25px;
+            gap: 11px;
         }
 
         .skill {
-            padding: 8px 14px;
-            background: #111827;
+            padding: 10px 15px;
             border: 1px solid #1e293b;
-            border-radius: 5px;
-            font-size: 14px;
+            background: #0e1626;
             color: #cbd5e1;
+            border-radius: 7px;
+            font-size: 14px;
         }
+
+        /* ================= PROJECTS ================= */
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
         .project-card {
-            background: #111827;
-            border: 1px solid #1e293b;
-            padding: 25px;
-            border-radius: 8px;
+            background: #0e1626;
+            border: 1px solid #1c2940;
+            border-radius: 11px;
+            padding: 28px;
+            transition: 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: #31527f;
+        }
+
+        .project-number {
+            color: #3b82f6;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 18px;
         }
 
         .project-card h3 {
+            font-size: 21px;
             margin-bottom: 12px;
-            font-size: 20px;
         }
 
         .project-card p {
             color: #94a3b8;
             font-size: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
-        .project-card a {
+        .project-link {
             color: #60a5fa;
             text-decoration: none;
             font-size: 14px;
+            font-weight: 600;
         }
 
-        footer {
+        /* ================= CONTACT ================= */
+
+        .contact-box {
+            background: #0e1626;
+            border: 1px solid #1c2940;
+            border-radius: 12px;
+            padding: 40px;
             text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid #1e293b;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+            margin: 12px auto 25px;
+            max-width: 600px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            border-top: 1px solid #172033;
+            text-align: center;
+            padding: 35px 20px;
             color: #64748b;
-            font-size: 14px;
+            font-size: 13px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-top: 130px;
+            }
+
+            .hero-content,
+            .hero-visual {
+                width: 100%;
+            }
+
+            .hero-visual {
+                min-height: 350px;
+            }
+
+            .about-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 600px) {
+
             nav {
-                padding: 15px 5%;
+                padding: 0 5%;
             }
 
-            nav a {
-                margin-left: 10px;
+            .nav-links {
+                gap: 12px;
             }
 
-            section {
-                padding: 70px 6%;
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .logo {
+                font-size: 14px;
             }
 
             .hero {
-                padding: 100px 6% 60px;
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            section {
+                padding: 75px 6%;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .network {
+                width: 310px;
+                height: 310px;
+            }
+
+            .shield {
+                transform: scale(0.75);
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -200,63 +500,347 @@
 
 <body>
 
+    <!-- NAVIGATION -->
+
     <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+
+        <a class="logo" href="#home">
+
+            <span class="logo-icon">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8">
+
+                    <path d="M12 2L20 5V11C20 16.2 16.6 20.1 12 22C7.4 20.1 4 16.2 4 11V5L12 2Z"/>
+                    <path d="M9 12L11 14L15.5 9.5"/>
+
+                </svg>
+
+            </span>
+
+            Bayan Al-Hawsawi
+
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
     </nav>
 
-    <header class="hero">
+
+    <!-- HERO -->
+
+    <header class="hero" id="home">
+
         <div class="hero-content">
 
-            <div class="tag">CYBERSECURITY PORTFOLIO</div>
+            <div class="eyebrow">
+                CYBERSECURITY PORTFOLIO
+            </div>
 
-            <h1>Bayan Al-Hawsawi</h1>
+            <h1>
+                Bayan<br>
+                Al-Hawsawi
+            </h1>
 
-            <h2>Information Systems Graduate | Aspiring SOC Analyst</h2>
+            <h2>
+                Information Systems Graduate<br>
+                <span style="color:#60a5fa;">Aspiring SOC Analyst</span>
+            </h2>
 
-            <p>
-                Building practical cybersecurity skills through hands-on
-                security investigations, network traffic analysis,
-                phishing analysis, and SOC-focused labs.
+            <p class="hero-description">
+
+                Building practical cybersecurity skills through
+                hands-on security investigations, network traffic
+                analysis, phishing analysis, and SOC-focused labs.
+
             </p>
 
+
             <div class="buttons">
-                <a class="primary" href="#projects">View Projects</a>
-                <a class="secondary" href="https://github.com/BayanMAlhawsawi">
-                    GitHub
+
+                <!-- CV -->
+
+                <a class="button button-primary"
+                   href="#"
+                   target="_blank">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2">
+
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+
+                    </svg>
+
+                    Download CV
+
                 </a>
+
+
+                <!-- LinkedIn -->
+
+                <a class="button button-secondary"
+                   href="https://www.linkedin.com/in/bayan-alhawsawi/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="currentColor">
+
+                        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.57V8.99H3.56v11.46zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>
+
+                    </svg>
+
+                    LinkedIn
+
+                </a>
+
             </div>
 
         </div>
+
+
+        <!-- CYBERSECURITY VISUAL -->
+
+        <div class="hero-visual">
+
+            <div class="network"></div>
+
+            <div class="shield">
+
+                <svg viewBox="0 0 200 230"
+                     fill="none">
+
+                    <path
+                        d="M100 8L184 40V100C184 156 148 199 100 220C52 199 16 156 16 100V40L100 8Z"
+                        fill="#0d1d35"
+                        stroke="#3b82f6"
+                        stroke-width="3"/>
+
+                    <path
+                        d="M100 25L166 50V101C166 145 138 178 100 197C62 178 34 145 34 101V50L100 25Z"
+                        stroke="#2563eb"
+                        stroke-width="1"
+                        opacity="0.7"/>
+
+                </svg>
+
+
+                <div class="lock">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.7">
+
+                        <rect x="5" y="10" width="14" height="11" rx="2"/>
+                        <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                        <circle cx="12" cy="15.5" r="1"/>
+
+                    </svg>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </header>
+
+
+    <!-- ABOUT -->
 
     <section id="about">
 
-        <h2>About Me</h2>
+        <div class="section-label">
+            ABOUT
+        </div>
 
-        <p class="section-intro">
-            A little about my background and current focus.
+        <h2>
+            About Me
+        </h2>
+
+        <p class="section-description">
+            My background, current focus, and the direction I am building toward.
         </p>
 
-        <p class="about-text">
-            I am an Information Systems graduate developing my skills in
-            cybersecurity and Security Operations. My current focus includes
-            network traffic analysis, phishing investigation, security
-            monitoring, IOC analysis, and incident reporting through
-            hands-on labs and practical projects.
-        </p>
+
+        <div class="about-layout">
+
+            <div class="about-text">
+
+                <p>
+                    I am an Information Systems graduate developing
+                    practical skills in cybersecurity and Security Operations.
+                </p>
+
+                <p>
+                    My current focus includes network traffic analysis,
+                    phishing investigation, security monitoring, IOC analysis,
+                    and incident reporting through hands-on labs and
+                    practical cybersecurity projects.
+                </p>
+
+            </div>
+
+
+            <div class="info-grid">
+
+                <!-- Education -->
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8">
+
+                            <path d="M3 10L12 5L21 10L12 15L3 10Z"/>
+                            <path d="M7 12V17C10 20 14 20 17 17V12"/>
+                            <path d="M21 10V16"/>
+
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Education
+                    </h3>
+
+                    <p>
+                        B.Sc. Information Systems
+                    </p>
+
+                </div>
+
+
+                <!-- Focus -->
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8">
+
+                            <circle cx="12" cy="12" r="8"/>
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 4V2"/>
+                            <path d="M20 12H22"/>
+
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Focus
+                    </h3>
+
+                    <p>
+                        SOC & Cybersecurity
+                    </p>
+
+                </div>
+
+
+                <!-- Location -->
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8">
+
+                            <path d="M20 10C20 15 12 21 12 21C12 21 4 15 4 10C4 5.6 7.6 3 12 3C16.4 3 20 5.6 20 10Z"/>
+                            <circle cx="12" cy="10" r="2.5"/>
+
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Location
+                    </h3>
+
+                    <p>
+                        Saudi Arabia
+                    </p>
+
+                </div>
+
+
+                <!-- Availability -->
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8">
+
+                            <rect x="3" y="5" width="18" height="16" rx="2"/>
+                            <path d="M8 5V3"/>
+                            <path d="M16 5V3"/>
+                            <path d="M3 10H21"/>
+                            <path d="M8 15L10 17L16 13"/>
+
+                        </svg>
+
+                    </div>
+
+                    <h3>
+                        Career Goal
+                    </h3>
+
+                    <p>
+                        SOC Analyst L1
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </section>
 
+
+    <!-- SKILLS -->
+
     <section id="skills">
 
-        <h2>Skills</h2>
+        <div class="section-label">
+            EXPERTISE
+        </div>
 
-        <p class="section-intro">
-            Technologies and cybersecurity concepts I am currently practicing.
+        <h2>
+            Skills
+        </h2>
+
+        <p class="section-description">
+            Technical areas and cybersecurity concepts I am currently practicing.
         </p>
+
 
         <div class="skills">
 
@@ -277,19 +861,36 @@
 
     </section>
 
+
+    <!-- PROJECTS -->
+
     <section id="projects">
 
-        <h2>Projects</h2>
+        <div class="section-label">
+            PROJECTS
+        </div>
 
-        <p class="section-intro">
-            Selected hands-on cybersecurity investigations.
+        <h2>
+            Security Projects
+        </h2>
+
+        <p class="section-description">
+            Hands-on investigations and practical cybersecurity work.
         </p>
+
 
         <div class="projects">
 
+
             <div class="project-card">
 
-                <h3>Phishing Email Analysis</h3>
+                <div class="project-number">
+                    01 / PHISHING
+                </div>
+
+                <h3>
+                    Phishing Email Analysis
+                </h3>
 
                 <p>
                     Investigation of a suspicious email using email headers,
@@ -297,15 +898,22 @@
                     and phishing analysis techniques.
                 </p>
 
-                <a href="#">
+                <a class="project-link" href="#">
                     View Project →
                 </a>
 
             </div>
 
+
             <div class="project-card">
 
-                <h3>Wireshark Network Investigation</h3>
+                <div class="project-number">
+                    02 / NETWORK
+                </div>
+
+                <h3>
+                    Wireshark Network Investigation
+                </h3>
 
                 <p>
                     Practical analysis of network traffic using Wireshark
@@ -313,22 +921,52 @@
                     network activity.
                 </p>
 
-                <a href="#">
+                <a class="project-link" href="#">
                     View Project →
                 </a>
 
             </div>
 
+
             <div class="project-card">
 
-                <h3>Network Traffic Analysis</h3>
+                <div class="project-number">
+                    03 / TRAFFIC
+                </div>
+
+                <h3>
+                    Network Traffic Analysis
+                </h3>
 
                 <p>
                     Hands-on investigation of network traffic and analysis
                     of normal versus potentially suspicious communication.
                 </p>
 
-                <a href="#">
+                <a class="project-link" href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    04 / MONITORING
+                </div>
+
+                <h3>
+                    Network Security Monitoring
+                </h3>
+
+                <p>
+                    Practical security monitoring focused on network activity,
+                    detection concepts, and identifying potentially suspicious
+                    behavior.
+                </p>
+
+                <a class="project-link" href="#">
                     View Project →
                 </a>
 
@@ -338,24 +976,53 @@
 
     </section>
 
+
+    <!-- CONTACT -->
+
     <section id="contact">
 
-        <h2>Contact</h2>
+        <div class="contact-box">
 
-        <p class="section-intro">
-            Interested in connecting? Feel free to reach out.
-        </p>
+            <div class="section-label">
+                CONTACT
+            </div>
 
-        <p>
-            <a href="https://github.com/BayanMAlhawsawi">
-                GitHub
+            <h2>
+                Let's Connect
+            </h2>
+
+            <p>
+                Interested in cybersecurity, SOC operations, or collaboration?
+                Feel free to connect with me on LinkedIn.
+            </p>
+
+            <a class="button button-primary"
+               href="https://www.linkedin.com/in/bayan-alhawsawi/"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <svg viewBox="0 0 24 24"
+                     fill="currentColor">
+
+                    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.57V8.99H3.56v11.46zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>
+
+                </svg>
+
+                Connect on LinkedIn
+
             </a>
-        </p>
+
+        </div>
 
     </section>
 
+
+    <!-- FOOTER -->
+
     <footer>
-        © 2026 Bayan Al-Hawsawi. All rights reserved.
+
+        © 2026 Bayan Al-Hawsawi · Cybersecurity Portfolio
+
     </footer>
 
 </body>
